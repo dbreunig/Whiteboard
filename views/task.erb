@@ -1,0 +1,46 @@
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+<link rel="stylesheet" href="<%= url('/css/pikaday-skeleton.css') %>">
+
+<form class="edit-form" method="POST" action="/task/<%= @task.id %>">
+    <label for="titleInput">Task</label>
+    <input 
+        class="u-full-width"
+        type="text"
+        value="<%= @task.title %>"
+        id="titleInput"
+        name="title"
+    >
+    <label for="noteInput">Notes</label>
+    <textarea
+        class="u-full-width"
+        id="noteInput"
+        name="note"
+    ><%= @task.note %></textarea>
+    <label for="categoryInput">Catgory</label>
+    <input 
+        class=""
+        type="text"
+        value="<%= @task.category %>"
+        placeholder="The task's category."
+        id="categoryInput"
+        name="category"
+    >
+    <label for="datepicker">Due Date</label>
+    <input type="text" id="datepicker" value="<%= @task.due_on ? @task.due_on.strftime('%a %b %d %Y') : "" %>"" name="due_on">
+    <label class="is-completed">
+            <input type="checkbox" name="isCompleted" <%= @task.completed ? "checked" : "" %>>
+            <span class="label-body">Completed</span>
+    </label>
+    <p>Created on <%= @task.created_at.strftime("%A, %B %e, %Y") %>.</p>
+    <input class="button-primary" type="submit" value="Save">
+    <a class="button" href="/delete/<%= @task.id %>">Delete</a>
+</form>
+
+
+<script>
+    var picker = new Pikaday({ 
+        field: document.getElementById('datepicker'),
+        format: 'D MMM YYYY'
+    });
+</script>

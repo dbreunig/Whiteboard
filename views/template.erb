@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Whiteboard</title>
+  <meta name="description" content="A site for home.">
+  <meta name="author" content="Drew Breunig">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="<%= url('/Skeleton/css/normalize.css') %>">
+  <link rel="stylesheet" href="<%= url('/Skeleton/css/skeleton.css') %>">
+  <link rel="stylesheet" href="<%= url('/css/custom.css') %>">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="<%= url('/Skeleton/images/favicon.png') %>">
+
+</head>
+<body>
+    <div class="nav-bar container">
+      <a href="/">Today</a> /
+      <a href="/inbox">In-Box<%= @inbox_count && @inbox_count > 0 ? " (#{@inbox_count})" : ""%></a> /
+      <a href="/categories">Categories</a> /
+      <a href="/completed">Completed</a>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div class="container footer">
+      <p class="footer-h">1208 Fountain Street, Alameda, CA</p>
+    </div>
+</body>
+</html>

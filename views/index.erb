@@ -1,0 +1,18 @@
+<form class="quick-create-form" method="POST" action="/quick-create">
+        <input class="u-full-width" type="text" placeholder="Quick Entry" id="titleInput" name="task" autofocus>
+</form>
+
+<% @things.each do |t| %>
+    <div class="task-row">  
+        <a class="task-link" href="/task/<%= t.id %>"><%= t.title %></a>
+        <% if t.completed %>
+        <form class="u-pull-right delete-form" method="post" action="/uncomplete/<%= t.id %>">
+            <input type="submit" class="button" value="Uncomplete">
+        </form>
+        <% else %>
+        <form class="u-pull-right delete-form" method="post" action="/complete/<%= t.id %>">
+            <input type="submit" class="button-primary" value="Complete">
+        </form>
+        <% end %>
+    </div>
+<% end %>

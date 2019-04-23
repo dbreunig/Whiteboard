@@ -1,0 +1,65 @@
+/* Site name
+______________________________*/
+
+.sitename-h {
+    font-family: 'Alegreya', serif;
+    font-weight: 700;
+    font-size: 2em;
+    padding-top: 1.5em;
+    padding-bottom: .2em;
+    color: black;
+    /* text-decoration: none; */
+}
+
+.sitename-h:hover {
+    color: #1EAEDB;
+}
+
+.nav-bar {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid darkslategrey;
+    margin-bottom: 2em;
+}
+
+.footer-h {
+    font-family: 'Alegreya', serif;
+    font-weight: 400;
+    font-size: 0.8em;
+    margin-top: 4em;
+}
+
+/* List Row
+______________________________*/
+
+.quick-create-form {
+    margin-bottom: 0;
+}
+
+.task-row {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid lightblue;
+    /* font-family: 'Noto Serif', serif; */
+}
+
+.task-link {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    /* font-family: 'Alegreya', serif; */
+}
+
+.delete-form {
+    margin-bottom: 0;
+}
+
+.button {
+    margin-bottom: 0;
+}
+
+.button-primary {
+    margin-bottom: 0;
+    background-color: steelblue;
+    border-color: steelblue;
+}
